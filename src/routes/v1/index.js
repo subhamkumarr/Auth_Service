@@ -8,11 +8,11 @@ const router = express.Router();
 router.post('/signup', 
 UserController.create
 );
-// router.post(
-//     '/signin',
-//     AuthRequestValidators.validateUserAuth,
-//     UserController.signIn
-// );
+router.post(
+    '/signin',
+    //AuthRequestValidators.validateUserAuth,
+    UserController.signIn
+);
 
 // router.get(
 //     '/isAuthenticated',
