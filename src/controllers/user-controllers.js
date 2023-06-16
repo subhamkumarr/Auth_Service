@@ -46,26 +46,26 @@ const signIn = async (req, res) => {
     }
 }
 
-// const isAuthenticated = async (req, res) => {
-//     try {
-//         const token = req.headers['x-access-token'];
-//         const response = await userService.isAuthenticated(token);
-//         return res.status(200).json({
-//             success: true,
-//             err: {},
-//             data: response,
-//             message: 'user is authenticated and token is valid'
-//         });
-//     } catch (error) {
-//         console.log(error);
-//         return res.status(500).json({
-//             message: 'Something went wrong',
-//             data: {},
-//             success: false,
-//             err: error
-//         });
-//     }
-// }
+const isAuthenticated = async (req, res) => {
+    try {
+        const token = req.headers['x-access-token'];
+        const response = await userService.isAuthenticated(token);
+        return res.status(200).json({
+            success: true,
+            err: {},
+            data: response,
+            message: 'user is authenticated and token is valid'
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            message: 'Something went wrong',
+            data: {},
+            success: false,
+            err: error
+        });
+    }
+}
 
 // const isAdmin = async(req, res) => {
 //     try {
@@ -90,6 +90,6 @@ const signIn = async (req, res) => {
 module.exports = {
     create,
      signIn,
-    // isAuthenticated,
+    isAuthenticated,
     // isAdmin
 }
